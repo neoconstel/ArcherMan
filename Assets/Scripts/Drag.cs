@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 // NOTE: there must be a collider on the object in order for the mouse events to work
 public class Drag : MonoBehaviour
@@ -11,35 +12,44 @@ public class Drag : MonoBehaviour
     public bool zeroTimeScaleLock; // for disable drag if timeScale = 0
     Vector3 difference = Vector3.zero;
 
-    void OnMouseDown(){
-        if(!zeroTimeScaleLock || Time.timeScale != 0)
-            difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+    private bool isDragging = false;
+
+    void OnMouseDown()
+    {
+        if (!enabled) return; // respect disabled state
+        if (!zeroTimeScaleLock || Time.timeScale != 0)
+        {
+            Vector2 mousePos = Mouse.current.position.ReadValue();
+            difference = Camera.main.ScreenToWorldPoint(mousePos) - transform.position;
+            isDragging = true;
+        }
     }
 
-    void OnMouseDrag(){
-        if(!zeroTimeScaleLock || Time.timeScale != 0){
+    void OnMouseUp()
+    {
+        isDragging = false;
+    }
+
+    void Update()
+    {
+        if (!isDragging) return;
+        if (!enabled) return; // respect disabled state
+
+        if (!zeroTimeScaleLock || Time.timeScale != 0)
+        {
+            Vector2 mousePos = Mouse.current.position.ReadValue();
+
             Vector3 oldPosition = transform.position;
-            Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) - difference;
-            if(xLock)
+            Vector3 newPosition = Camera.main.ScreenToWorldPoint(mousePos) - difference;
+
+            if (xLock)
                 newPosition.x = oldPosition.x;
-            if(yLock)
+            if (yLock)
                 newPosition.y = oldPosition.y;
-            if(zLock)
+            if (zLock)
                 newPosition.z = oldPosition.z;
 
             transform.position = newPosition;
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

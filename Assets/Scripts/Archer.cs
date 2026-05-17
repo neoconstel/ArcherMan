@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Archer : MonoBehaviour
 {
@@ -10,45 +11,35 @@ public class Archer : MonoBehaviour
     public GameObject arrow;
     public float fireInterval;
 
-    float nextFireTime = 0f; // for autoFire() method
     Vector3 archerPositionAtBowPull;
 
 
-    void fire(){
+    void Fire()
+    {
         Instantiate(arrow, arrowOrigin.position, Quaternion.identity);
     }
 
-    void OnMouseDown(){
+    public void OnMouseDown()
+    {
         archerPositionAtBowPull = transform.position;
     }
 
-    void OnMouseUp(){
-        // if archer has not been dragged after clicking, then release arrow
-        if(transform.position == archerPositionAtBowPull && Time.timeScale != 0){
-            fire();
+    public void OnMouseUp()
+    {
+        if (transform.position == archerPositionAtBowPull && Time.timeScale != 0)
+        {
+            Fire();
         }
     }
 
-    void autoFire(){
-        // fires continuously when method is called in Update()
 
-        if (Time.time >= nextFireTime){
-            Instantiate(arrow, arrowOrigin.position, Quaternion.identity);
-            nextFireTime = Time.time + fireInterval;
-        }
-    }
-
-    
-
-    // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
