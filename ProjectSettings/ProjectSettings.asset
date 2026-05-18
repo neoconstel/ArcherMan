@@ -268,7 +268,7 @@ PlayerSettings:
   AndroidAllowedArchitectures: -1
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: /mnt/01DADE26D1983E30/XYX781227/Backups/Dev Keys/playstore
+  AndroidKeystoreName: /media/flashxy/Archives/XYX781227/Backups/Dev Keys/playstore
     app keys/Archer Man/ArcherMan.keystore
   AndroidKeyaliasName: archerman keystore
   AndroidEnableArmv9SecurityFeatures: 0

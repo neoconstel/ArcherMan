@@ -1981,7 +1981,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 252298345}
         m_TargetAssemblyTypeName: GameMenu, Assembly-CSharp
         m_MethodName: pauseGame
         m_Mode: 1
@@ -2268,7 +2268,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 252298345}
         m_TargetAssemblyTypeName: GameMenu, Assembly-CSharp
         m_MethodName: resumeGame
         m_Mode: 1
@@ -2432,7 +2432,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 252298345}
         m_TargetAssemblyTypeName: GameMenu, Assembly-CSharp
         m_MethodName: returnToMainScreen
         m_Mode: 1

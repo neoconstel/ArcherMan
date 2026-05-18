@@ -9,4 +9,5 @@ Library/*
 keystore
 Temp
 resource_files
+Build/
 
