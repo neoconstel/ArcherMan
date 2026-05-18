@@ -1,4 +1,10 @@
-# Unity Version: 6.2 (6000.2.6f2)
+# Unity Version: 6.4 (6000.4.5f1)
+
+## Compilation Notes
+- Last compiled on Linux Mint 22.3
+- Successful compilation required using a manual NDK, instead of the Unity NDK
+- Link to the exact NDK used: https://dl.google.com/android/repository/android-ndk-r27c-linux.zip
+
 
 ### Link to published app on Google Play Store:
 https://play.google.com/store/apps/details?id=com.ZiegotronCreative.ArcherMan
