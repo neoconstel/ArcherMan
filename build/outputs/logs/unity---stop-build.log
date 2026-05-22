@@ -1,12 +1,2 @@
-
-Welcome to Gradle 9.1.0!
-
-Here are the highlights of this release:
- - Full Java 25 support
- - Native task graph visualization
- - Enhanced console output
-
-For more details see https://docs.gradle.org/9.1.0/release-notes.html
-
 Stopping Daemon(s)
 1 Daemon stopped
