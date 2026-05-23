@@ -1,4 +1,4 @@
-# Unity Version: 6.4 (6000.4.5f1)
+# Unity Version: 6.4 (6000.4.5f1)(not an LTS version)
 
 ## Compilation Notes
 - Last compiled on Linux Mint 22.3
